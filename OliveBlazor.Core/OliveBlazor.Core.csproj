@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Application\Admin\Common\" />
+    <Folder Include="Application\Admin\Permission\Queries\GetPermissionMatrix\" />
+    <Folder Include="Application\Admin\Roles\Commands\RemoveRole\" />
+    <Folder Include="Application\Common\Exceptions\" />
+    <Folder Include="Application\Helpers\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.8.0" />
+    <PackageReference Include="MediatR" Version="12.1.1" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="7.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Application\Admin\Users\Queries\UserList\UserDto.cs" />
+  </ItemGroup>
+
+</Project>

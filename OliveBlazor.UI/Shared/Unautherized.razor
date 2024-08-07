@@ -1,0 +1,8 @@
+﻿@page "/unauthorized"
+@using OliveBlazor.Core.Application.Services
+@inject IErrorService ErrorService
+
+<div class="text-center">
+    <h3>Oops! Unauthorized Access</h3>
+    <p>@ErrorService.ErrorMessage</p>
+</div>

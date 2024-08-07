@@ -1,0 +1,17 @@
+﻿@page "/admin/roles/details/{RoleId}"
+@using OliveBlazor.Core.Application.Services.IdentityManagement
+@using OliveBlazor.Core.Domain.Security
+@inject IIdentityService IdentityService
+
+@code {
+   
+}
+
+<h3>@Role.Name</h3>
+<h5>Assigned Permissions:</h5>
+<ul>
+    @foreach (var permission in Role.Permissions.GetIndividualFlags())
+    {
+        <li>@permission</li>
+    }
+</ul>

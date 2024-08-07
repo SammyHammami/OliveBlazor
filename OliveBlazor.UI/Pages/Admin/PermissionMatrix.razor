@@ -1,0 +1,42 @@
+﻿@page "/admin/permissions"
+@using OliveBlazor.Core.Domain.Security
+@using OliveBlazor.Infrastructure.Indentity.Permissions
+
+
+
+@attribute [PermissionAuthorize(Permissions.ManagePermissions)]
+<PageTitle>Permission Matrix</PageTitle>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Permissions / Roles</th>
+            @foreach (var role in Vm.Roles)
+            {
+                <th>@role.Name</th>
+            }
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var permission in Vm.PermissionsList)
+        {
+            <tr>
+                <td>@permission</td>
+                @foreach (var role in Vm.Roles)
+                {
+                    <td>
+                        <input type="checkbox" checked="@Vm.Matrix[permission].Contains(role)" @onclick="() => TogglePermission(permission, role)" />
+
+                    </td>
+                }
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <td>
+
+                <button type="button" class="btn btn-primary" @onclick="SaveMatrix">Save</button>
+            </td>
+        </tr>
+    </tfoot>
+</table>

@@ -1,0 +1,41 @@
+﻿@page "/UserDetails/{UserId}"
+
+
+
+@* @attribute [PermissionAuthorize(Permissions.ManageUsers)] *@
+
+
+<PageTitle>User Details</PageTitle>
+
+@if (userDetails == null)
+{
+    <p>Loading...</p>
+}
+else
+{
+    <div>
+        <label>Username:</label>
+        <input @bind="userDetails.UserName" disabled />
+    </div>
+
+    <div>
+        <label>Email:</label>
+        <input @bind="userDetails.Email" disabled />
+    </div>
+
+    <div>
+        <label>Email Confirmed:</label>
+        <input type="checkbox" @bind="userDetails.EmailConfirmed" disabled />
+    </div>
+
+    <h5>Assign Roles</h5>
+    @foreach (var role in userDetails.AllRoles)
+    {
+        <div>
+            <input type="checkbox" checked="@userDetails.UserRoles?.Contains(role)" @onchange="async e => await UpdateUserRole(role, (bool)e.Value)" />
+            @role
+        </div>
+    }
+    
+    @* <button @onclick="UpdateUserRoles" disabled="">Update Roles</button> *@
+}

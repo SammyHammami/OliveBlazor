@@ -1,0 +1,13 @@
+﻿@page "/admin/users"
+@using OliveBlazor.Core.Domain.Security
+@using OliveBlazor.Infrastructure.Indentity.Permissions
+@using OliveBlazor.UI.Pages.Admin.Users.Components
+
+
+@attribute [PermissionAuthorize(Permissions.ViewUsers)]
+
+<PageTitle>Users</PageTitle>
+
+<CascadingAuthenticationState>
+    <UsersList Users="@Model?.Users" CanManageUsers="@_canManageUsers" />
+</CascadingAuthenticationState>

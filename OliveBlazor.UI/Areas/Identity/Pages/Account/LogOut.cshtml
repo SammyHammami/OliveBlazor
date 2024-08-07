@@ -1,0 +1,15 @@
+﻿@page
+@using OliveBlazor.Infrastructure.Indentity
+@attribute [IgnoreAntiforgeryToken]
+@inject SignInManager<UserIdentity> SignInManager
+@functions {
+    public async Task<IActionResult> OnPost()
+    {
+        if (SignInManager.IsSignedIn(User))
+        {
+            await SignInManager.SignOutAsync();
+        }
+
+        return Redirect("~/");
+    }
+}

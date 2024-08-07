@@ -1,0 +1,53 @@
+﻿@page "/admin/roles"
+@using OliveBlazor.Core.Domain.Security
+@using OliveBlazor.Infrastructure.Indentity.Permissions
+
+@attribute [PermissionAuthorize(Permissions.ViewRoles)]
+
+<PageTitle>Roles</PageTitle>
+
+<h1>Roles</h1>
+@if (Model == null) { return; }
+<table class="table table-striped table-hover w-75">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var role in Model.Roles)
+    {
+        <tr>
+            <td>@role.Name</td>
+            <td>
+                <button type="button" class="btn btn-danger" @onclick="() => RemoveRole(role.Id)">
+                    <span class="oi oi-trash"></span>
+                </button>
+            </td>
+        </tr>
+    }
+    </tbody>
+    
+    <AuthorizeView Policy="AddRoles">
+        <Authorized>
+            <!-- Content for authorized users -->
+            <tfoot>
+            <tr>
+                <td>
+                    <input type="text" id="name" class="form-control" placeholder="New Role..." @bind="newRoleName" />
+                </td>
+                <td>
+                    <button type="button" class="btn btn-primary" @onclick="AddRole">
+                        <span class="oi oi-plus"></span>
+                    </button>
+                </td>
+            </tr>
+            </tfoot>
+        </Authorized>
+        <NotAuthorized>
+            <!-- Content for non-authorized users -->
+            <p>You do not have permission to add new roles.</p>
+        </NotAuthorized>
+    </AuthorizeView>
+</table>
