@@ -81,6 +81,10 @@ In the Package Manager Console, navigate to the project containing your `DbConte
 
 ```shell
 Update-Database 
+```
+
+### Default Admin User
+Admin / Admin@123
 
 
 
