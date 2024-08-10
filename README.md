@@ -13,6 +13,14 @@
 - **Customizable**: Easily extendable to fit your specific business needs and requirements.
 - **Default Admin User**: A default admin user is seeded with the setup data for easy access and testing.
 
+
+
+![Olive Blazor](https://github.com/SammyHammami/OliveBlazor/blob/master/Olive%20Blazor%20(1).gif)
+
+
+
+
+
 ## Project Structure
 
 The solution is structured into three main projects:
@@ -81,6 +89,10 @@ In the Package Manager Console, navigate to the project containing your `DbConte
 
 ```shell
 Update-Database 
+```
+
+### Default Admin User
+Admin / Admin@123
 
 
 
