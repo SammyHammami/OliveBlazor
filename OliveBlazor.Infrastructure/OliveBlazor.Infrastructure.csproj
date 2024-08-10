@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
@@ -24,11 +24,11 @@
   <ItemGroup>
     <PackageReference Include="Mailgun.NET" Version="0.1.16" />
     <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="7.0.12" />
-    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="7.0.12" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.12" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.7" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="8.0.7" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.7" />
     <PackageReference Include="Onron.Smtp2go.AspNetCore" Version="0.1.0" />
-    <PackageReference Include="RestSharp" Version="110.2.0" />
+    <PackageReference Include="RestSharp" Version="111.4.1" />
     <PackageReference Include="RestSharp.Authenticators" Version="1.1.1" />
   </ItemGroup>
 
