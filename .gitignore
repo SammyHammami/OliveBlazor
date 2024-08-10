@@ -362,3 +362,4 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 /OliveBlazor.UI/Properties/ServiceDependencies/OliveBlazor - Zip Deploy/profile.arm.json
+/OliveBlazor.UI/appsettings.json
