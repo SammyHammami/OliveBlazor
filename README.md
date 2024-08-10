@@ -41,7 +41,7 @@ The solution is structured into three main projects:
 
 ### Prerequisites
 
-- [.NET 7 SDK](https://dotnet.microsoft.com/download/dotnet/7.0) or later
+- [.NET 8 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) or later
 - [Visual Studio 2022](https://visualstudio.microsoft.com/vs/) or Visual Studio Code
 
 
