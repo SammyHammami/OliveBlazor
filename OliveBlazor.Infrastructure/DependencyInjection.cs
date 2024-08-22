@@ -1,8 +1,12 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using MediatR;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using OliveBlazor.Core.Application.Common.Behaviours;
+using OliveBlazor.Core.Application.Common.Interfaces;
 using OliveBlazor.Core.Application.Services.Email;
 using OliveBlazor.Core.Application.Services.IdentityManagement;
+using OliveBlazor.Infrastructure.Data;
 using OliveBlazor.Infrastructure.Indentity;
 using OliveBlazor.Infrastructure.Services;
 
@@ -15,6 +19,9 @@ namespace OliveBlazor.Infrastructure
         {
             services.AddScoped<IIdentityService, IdentityService>();
             services.AddScoped<IPermissionService, PermissionService>();
+            services.AddScoped<IUnitOfWork, EfUnitOfWork>();
+            services.AddTransient(typeof(IPipelineBehavior<,>), typeof(TransactionBehaviour<,>));
+
             services.AddMemoryCache();
 
             services.AddScoped<IEmailService>(sp =>
